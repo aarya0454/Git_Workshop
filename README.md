@@ -184,8 +184,8 @@ This project was created for SCRIET Meerut workshop. Feel free to adapt it for y
 
 - **Lakshya Pandey** - B.Tech IT
 - **Jayesh Gaur** - B.Tech CS
-- **Utsav Dubey** - B.Tech CS
-- **Keshari Nandan** - B.Tech EI
+- **Utsav Dubey** - B.Tech IT
+
 
 SCRIET, Meerut
 
