@@ -95,7 +95,7 @@ export default function HomePage() {
           <h2 className="text-4xl font-bold text-center mb-16 text-slate-900">
             Workshop Curriculum
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Day 1 */}
             <Link href="/day1" className="group bg-white rounded-xl shadow-sm hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 border border-slate-200 overflow-hidden">
               <div className="h-2 bg-blue-500 w-full"></div>

@@ -47,18 +47,44 @@ export default function MergeConflictsPage() {
           </div>
         </Slide>
 
-        {/* Anatomy */}
+        {/* Anatomy of a Conflict */}
         <Slide title="Anatomy of a Conflict">
-          <p className="mb-4">Git adds special markers to the file to show you the conflicting changes.</p>
-          <div className="bg-slate-900 p-6 rounded-xl font-mono text-sm shadow-lg border border-slate-800">
-            <div className="text-slate-500 mb-2">index.html</div>
-            <div className="text-yellow-500">{'<<<<<<< HEAD'}</div>
-            <div className="text-green-400 pl-4">{'<h1>Welcome to My Website</h1>'}</div>
-            <div className="text-slate-500 text-xs pl-4">// This is what YOU have</div>
-            <div className="text-yellow-500">=======</div>
-            <div className="text-blue-400 pl-4">{'<h1>Welcome to Our Amazing Website</h1>'}</div>
-            <div className="text-slate-500 text-xs pl-4">// This is what THEY have</div>
-            <div className="text-yellow-500">{'>>>>>>> feature-new-header'}</div>
+          <p className="mb-6">
+            When Git gets confused, it pauses and asks for help. It marks the file like this:
+          </p>
+          <div className="bg-slate-900 p-6 rounded-xl font-mono text-sm shadow-2xl border border-slate-800 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-1 h-full bg-yellow-500"></div>
+            
+            <div className="text-yellow-500 mb-2">{'<<<<<<< HEAD'}</div>
+            <div className="text-white pl-4 bg-white/5 py-1">
+              const buttonColor = "blue"; // Your change
+            </div>
+            
+            <div className="text-slate-500 my-2">=======</div>
+            
+            <div className="text-white pl-4 bg-white/5 py-1">
+              const buttonColor = "red"; // Incoming change
+            </div>
+            <div className="text-green-500 mt-2">{'>>>>>>> feature-login'}</div>
+          </div>
+          
+          <div className="mt-6 grid md:grid-cols-2 gap-4">
+            <div className="p-4 bg-white border border-slate-200 rounded-xl">
+              <h4 className="font-bold text-slate-900 mb-2">The Markers</h4>
+              <ul className="text-sm text-slate-600 space-y-1">
+                <li><code>{'<<<<<<<'}</code> : Start of your changes</li>
+                <li><code>=======</code> : The divider</li>
+                <li><code>{'>>>>>>>'}</code> : End of incoming changes</li>
+              </ul>
+            </div>
+            <div className="p-4 bg-blue-50 border border-blue-100 rounded-xl">
+              <h4 className="font-bold text-blue-900 mb-2">How to Fix</h4>
+              <ol className="list-decimal list-inside text-sm text-blue-800 space-y-1">
+                <li>Delete the markers.</li>
+                <li>Choose the code you want (or combine them).</li>
+                <li>Save the file.</li>
+              </ol>
+            </div>
           </div>
         </Slide>
 

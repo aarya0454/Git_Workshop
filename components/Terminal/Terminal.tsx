@@ -47,7 +47,15 @@ export default function Terminal({ initialCommands = [], readOnly = false }: Ter
     const fitAddon = new FitAddon();
     term.loadAddon(fitAddon);
     term.open(terminalRef.current);
-    fitAddon.fit();
+    
+    // Delay fit to ensure DOM is ready
+    setTimeout(() => {
+      try {
+        fitAddon.fit();
+      } catch (e) {
+        console.error("Failed to fit terminal:", e);
+      }
+    }, 100);
 
     // Welcome message
     term.writeln('\x1b[1;36mGitHub Workshop Terminal\x1b[0m');

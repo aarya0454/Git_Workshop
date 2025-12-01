@@ -4,6 +4,7 @@ import React from "react";
 import WorkshopLayout from "@/components/Layout/WorkshopLayout";
 import Slide from "@/components/Teaching/Slide";
 import { Globe, Laptop, Key, Shield, User } from "lucide-react";
+import MermaidDiagram from "@/components/Visuals/MermaidDiagram";
 
 export default function GitHubIntroPage() {
   return (
@@ -41,6 +42,49 @@ export default function GitHubIntroPage() {
               <div className="bg-slate-800 p-3 rounded border border-slate-700 text-sm text-slate-400">
                 Like "Cloud Save" or Multiplayer Servers.
               </div>
+            </div>
+          </div>
+        </Slide>
+
+        {/* Remote Tracking Branches */}
+        <Slide title="The Concept of 'Origin'">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="flex-1">
+              <p className="mb-4">
+                When you clone or push, you'll see <code>origin/main</code>. What is it?
+              </p>
+              <div className="space-y-4">
+                <div className="p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
+                  <h4 className="font-bold text-slate-900 mb-1">main</h4>
+                  <p className="text-sm text-slate-600">Your local branch. You work here.</p>
+                </div>
+                <div className="p-4 bg-slate-900 text-white border border-slate-700 rounded-xl shadow-sm">
+                  <h4 className="font-bold text-white mb-1">origin/main</h4>
+                  <p className="text-sm text-slate-400">
+                    Your local <strong>bookmark</strong> of where the server's main branch was last time you checked.
+                  </p>
+                </div>
+              </div>
+              <p className="mt-4 text-sm text-slate-500 italic">
+                <code>git fetch</code> updates the bookmark. <code>git pull</code> updates the bookmark AND your local branch.
+              </p>
+            </div>
+            <div className="w-full md:w-1/2 bg-white p-4 rounded-xl border border-slate-200">
+               <MermaidDiagram 
+                chart={`graph TD
+    subgraph Local Computer
+    L[main]
+    O[origin/main]
+    end
+    subgraph GitHub
+    R[main]
+    end
+    L -->|git push| R
+    R -->|git fetch| O
+    O -->|git merge| L
+    style O fill:#333,stroke:#000,color:#fff
+`} 
+              />
             </div>
           </div>
         </Slide>
@@ -103,45 +147,19 @@ export default function GitHubIntroPage() {
         </Slide>
 
         {/* SSH Keys */}
+        {/* SSH Keys Reference */}
         <Slide title="Authentication: SSH Keys">
-          <p className="mb-6">
-            To push code without typing your password every time, we use SSH keys. It's like a digital ID card for your computer.
-          </p>
-          
-          <div className="space-y-6">
+          <div className="flex items-start gap-4 p-6 bg-blue-50 border border-blue-200 rounded-xl">
+            <Key className="text-blue-600 mt-1" size={24} />
             <div>
-              <h3 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs">1</span>
-                Generate Key
-              </h3>
-              <div className="code-block">
-                <code className="text-sm">ssh-keygen -t ed25519 -C "your.email@example.com"</code>
-              </div>
-              <p className="text-xs text-slate-500 mt-1">Press Enter to accept all defaults.</p>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs">2</span>
-                Copy Key
-              </h3>
-              <div className="code-block">
-                <code className="text-sm">
-                  # Windows (PowerShell)<br/>
-                  cat ~/.ssh/id_ed25519.pub | clip<br/><br/>
-                  # Mac/Linux<br/>
-                  cat ~/.ssh/id_ed25519.pub
-                </code>
-              </div>
-            </div>
-
-            <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg flex items-start gap-3">
-              <Shield className="text-yellow-600 mt-1" />
-              <div>
-                <h4 className="font-bold text-yellow-800">Security Warning</h4>
-                <p className="text-sm text-yellow-700">
-                  Never share your <strong>private key</strong> (the file without .pub). Only share the public key!
-                </p>
+              <h3 className="font-bold text-blue-900 mb-2">Already Set Up?</h3>
+              <p className="text-blue-800 mb-4">
+                We covered SSH key generation and setup in <strong>Day 1: Module 6</strong>. 
+                If you skipped that, please go back and complete it to ensure you can push code securely.
+              </p>
+              <div className="text-sm text-blue-700 bg-white p-3 rounded border border-blue-100">
+                <strong>Quick Check:</strong> Run <code>ssh -T git@github.com</code> in your terminal. 
+                If it says "Hi username!", you are good to go!
               </div>
             </div>
           </div>

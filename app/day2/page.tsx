@@ -21,28 +21,14 @@ export default function Day2Page() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <Link href="/day1/first-commands" className="group card bg-white border-slate-200 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/10 transition-all">
-            <div className="flex items-start justify-between mb-6">
-              <div className="p-4 bg-blue-50 rounded-xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                <Code size={32} />
-              </div>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 1</span>
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">Git Basics</h3>
-            <p className="text-slate-600 mb-6">
-              Init, add, commit, push, pull. The core commands you need to know.
-            </p>
-            <div className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform">
-              Learn Commands <ArrowRight size={20} className="ml-2" />
-            </div>
-          </Link>
+
 
           <Link href="/day2/github-intro" className="group card bg-white border-slate-200 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 transition-all">
             <div className="flex items-start justify-between mb-6">
               <div className="p-4 bg-teal-50 rounded-xl text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
                 <Globe size={32} />
               </div>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 2</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 1</span>
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">GitHub Interface</h3>
             <p className="text-slate-600 mb-6">
@@ -58,7 +44,7 @@ export default function Day2Page() {
               <div className="p-4 bg-purple-50 rounded-xl text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
                 <GitBranch size={32} />
               </div>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 3</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 2</span>
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">Branching & Merging</h3>
             <p className="text-slate-600 mb-6">
@@ -74,7 +60,7 @@ export default function Day2Page() {
               <div className="p-4 bg-orange-50 rounded-xl text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
                 <GitPullRequest size={32} />
               </div>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 4</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 3</span>
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">Pull Requests</h3>
             <p className="text-slate-600 mb-6">
@@ -90,7 +76,7 @@ export default function Day2Page() {
               <div className="p-4 bg-red-50 rounded-xl text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
                 <AlertCircle size={32} />
               </div>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 5</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 4</span>
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-red-600 transition-colors">Merge Conflicts</h3>
             <p className="text-slate-600 mb-6">
@@ -106,7 +92,7 @@ export default function Day2Page() {
               <div className="p-4 bg-green-50 rounded-xl text-green-600 group-hover:bg-green-600 group-hover:text-white transition-colors">
                 <AlertCircle size={32} />
               </div>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 6</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 5</span>
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-green-600 transition-colors">Issues & Projects</h3>
             <p className="text-slate-600 mb-6">
@@ -122,7 +108,7 @@ export default function Day2Page() {
               <div className="p-4 bg-yellow-50 rounded-xl text-yellow-600 group-hover:bg-yellow-600 group-hover:text-white transition-colors">
                 <Globe size={32} />
               </div>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 7</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 6</span>
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-yellow-600 transition-colors">Developer Profile</h3>
             <p className="text-slate-600 mb-6">

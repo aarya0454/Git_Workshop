@@ -2,6 +2,7 @@
 
 import WorkshopLayout from "@/components/Layout/WorkshopLayout";
 import { BookOpen, FileText, List, Code } from "lucide-react";
+import Slide from "@/components/Teaching/Slide";
 
 export default function DocumentationPage() {
   return (
@@ -48,14 +49,69 @@ export default function DocumentationPage() {
             </div>
           </div>
 
-          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-blue-900 mb-4">Tips for Great Docs</h2>
-            <ul className="space-y-3 text-blue-800">
-              <li className="flex items-center gap-2"><Code size={16}/> <strong>Show, Don't Tell:</strong> Use code snippets and examples.</li>
-              <li className="flex items-center gap-2"><Code size={16}/> <strong>Keep it Simple:</strong> Write for beginners, not just experts.</li>
-              <li className="flex items-center gap-2"><Code size={16}/> <strong>Update Often:</strong> Outdated docs are worse than no docs.</li>
-            </ul>
+        {/* Readme Driven Development */}
+        <Slide title="Readme Driven Development">
+          <div className="flex flex-col md:flex-row gap-6 items-center">
+            <div className="flex-1">
+              <p className="mb-4">
+                Most developers write code first, then docs. <strong>Try doing it backwards.</strong>
+              </p>
+              <div className="p-4 bg-purple-50 border border-purple-100 rounded-xl">
+                <h3 className="font-bold text-purple-900 mb-2">The Process</h3>
+                <ol className="list-decimal list-inside space-y-2 text-sm text-purple-800">
+                  <li>Write the <code>README.md</code> first.</li>
+                  <li>Describe how the feature <em>should</em> work.</li>
+                  <li>Write the code to make the README true.</li>
+                </ol>
+              </div>
+              <p className="mt-4 text-sm text-slate-600">
+                This forces you to design a good API before you get lost in the implementation details.
+              </p>
+            </div>
+            <div className="w-full md:w-1/3">
+              <div className="bg-slate-900 text-slate-300 p-4 rounded-xl font-mono text-xs shadow-lg">
+                <p className="text-green-400"># My Awesome Feature</p>
+                <br/>
+                <p>## Usage</p>
+                <p>```js</p>
+                <p>const user = await getUser(1);</p>
+                <p>console.log(user.name);</p>
+                <p>```</p>
+                <br/>
+                <p className="text-slate-500">// Now I just need to make this code work...</p>
+              </div>
+            </div>
           </div>
+        </Slide>
+
+        {/* Tools */}
+        <Slide title="Tools of the Trade">
+          <p className="mb-6">
+            As your project grows, a single README won't be enough. Use these tools to build full documentation sites.
+          </p>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="p-4 bg-white border border-slate-200 rounded-xl hover:shadow-md transition-shadow">
+              <div className="text-2xl mb-2">🦖</div>
+              <h3 className="font-bold text-slate-900">Docusaurus</h3>
+              <p className="text-xs text-slate-500 mb-2">By Meta</p>
+              <p className="text-sm text-slate-600">Built with React. Used by Redux, Create React App, and millions of others.</p>
+            </div>
+
+            <div className="p-4 bg-white border border-slate-200 rounded-xl hover:shadow-md transition-shadow">
+              <div className="text-2xl mb-2">📘</div>
+              <h3 className="font-bold text-slate-900">MkDocs</h3>
+              <p className="text-xs text-slate-500 mb-2">Python-based</p>
+              <p className="text-sm text-slate-600">Simple, fast, and uses standard Markdown. Great for non-JS projects.</p>
+            </div>
+
+            <div className="p-4 bg-white border border-slate-200 rounded-xl hover:shadow-md transition-shadow">
+              <div className="text-2xl mb-2">⚡</div>
+              <h3 className="font-bold text-slate-900">VitePress</h3>
+              <p className="text-xs text-slate-500 mb-2">By Vue.js</p>
+              <p className="text-sm text-slate-600">Extremely fast static site generator. The modern choice for Vue projects.</p>
+            </div>
+          </div>
+        </Slide>
         </div>
       </div>
     </WorkshopLayout>

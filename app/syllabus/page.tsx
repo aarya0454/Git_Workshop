@@ -16,7 +16,10 @@ export default function SyllabusPage() {
         { title: "Importance of Version Control", icon: GitBranch },
         { title: "Use of open source by MNC’s", icon: Globe },
         { title: "Installing Git", icon: Terminal },
+        { title: "First Git Commands", icon: Code },
         { title: "Local vs remote repositories", icon: Zap },
+        { title: "SSH Setup & First Push", icon: Globe },
+
       ]
     },
     {
@@ -26,7 +29,7 @@ export default function SyllabusPage() {
       color: "teal",
       icon: Code,
       modules: [
-        { title: "init, commit, clone, push, pull", icon: Code },
+
         { title: "GitHub interface", icon: Globe },
         { title: "Branching, forking, pull requests", icon: GitBranch },
         { title: "Merge conflicts", icon: Zap },

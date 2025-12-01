@@ -5,3 +5,7 @@ out
 *.log
 .env*.local
 .vercel
+.workshop_content.md 
+.workshop_website_design.md 
+.Master_prompt.md
+.content.md 

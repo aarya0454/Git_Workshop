@@ -27,31 +27,49 @@ export default function EtiquettePage() {
           </div>
         </Slide>
 
-        {/* Do's and Don'ts */}
-        <Slide title="The Golden Rules">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 bg-green-50 rounded-xl border border-green-100">
-              <h3 className="font-bold text-green-900 mb-4 flex items-center gap-2">
-                <ThumbsUp size={20} /> Do This
-              </h3>
-              <ul className="space-y-3 text-sm text-green-800">
-                <li>✅ <strong>Search First:</strong> Check if your issue already exists before posting.</li>
-                <li>✅ <strong>Be Patient:</strong> It might take days or weeks for a reply.</li>
-                <li>✅ <strong>Provide Context:</strong> Screenshots, logs, and steps to reproduce.</li>
-                <li>✅ <strong>Say Thanks:</strong> Gratitude motivates maintainers.</li>
-              </ul>
+        {/* Communication Templates */}
+        <Slide title="Communication Templates">
+          <p className="mb-4">
+            Not sure what to say? Use these templates to sound professional.
+          </p>
+          <div className="space-y-4">
+            <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <h4 className="font-bold text-slate-900 mb-2 text-sm uppercase tracking-wide">Asking to work on an issue</h4>
+              <div className="font-mono text-sm text-slate-600 bg-slate-50 p-3 rounded border border-slate-100">
+                "Hi! I'd like to work on this issue. I plan to fix it by [briefly explain your plan]. Is that the right direction?"
+              </div>
             </div>
 
-            <div className="p-6 bg-red-50 rounded-xl border border-red-100">
-              <h3 className="font-bold text-red-900 mb-4 flex items-center gap-2">
-                <AlertTriangle size={20} /> Don't Do This
-              </h3>
-              <ul className="space-y-3 text-sm text-red-800">
-                <li>❌ <strong>"Plz fix":</strong> Don't demand fixes. You are not a customer.</li>
-                <li>❌ <strong>Ghosting:</strong> Don't open a PR and then disappear.</li>
-                <li>❌ <strong>Spamming:</strong> Don't comment "+1" or "Any update?" repeatedly.</li>
-                <li>❌ <strong>Entitlement:</strong> Remember, you are getting this software for free.</li>
-              </ul>
+            <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <h4 className="font-bold text-slate-900 mb-2 text-sm uppercase tracking-wide">Asking for help</h4>
+              <div className="font-mono text-sm text-slate-600 bg-slate-50 p-3 rounded border border-slate-100">
+                "I'm stuck on [specific problem]. I've tried [solution A] and [solution B], but I'm still seeing [error message]. Could you point me in the right direction?"
+              </div>
+            </div>
+          </div>
+        </Slide>
+
+        {/* Handling Rejection */}
+        <Slide title="Handling Rejection">
+          <div className="flex items-center gap-6">
+            <div className="flex-1">
+              <p className="mb-4">
+                Sometimes your PR will be closed or rejected. <strong>This is normal.</strong>
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3 p-3 bg-red-50 rounded-lg text-sm text-red-800">
+                  <AlertTriangle size={16} className="mt-1 shrink-0" />
+                  <p><strong>"Out of Scope":</strong> The feature doesn't fit the project's goals. It's not about your code quality.</p>
+                </div>
+                <div className="flex items-start gap-3 p-3 bg-orange-50 rounded-lg text-sm text-orange-800">
+                  <AlertTriangle size={16} className="mt-1 shrink-0" />
+                  <p><strong>"Duplicate":</strong> Someone else fixed it first. Bad luck, but you still learned!</p>
+                </div>
+                <div className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg text-sm text-blue-800">
+                  <ThumbsUp size={16} className="mt-1 shrink-0" />
+                  <p><strong>The Response:</strong> "Thanks for the feedback! I understand. Is there another issue I could help with?"</p>
+                </div>
+              </div>
             </div>
           </div>
         </Slide>

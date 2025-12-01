@@ -14,26 +14,68 @@ export default function WritingPRsPage() {
       nextTitle="Day 4: Career & Growth"
     >
       <div className="max-w-4xl mx-auto">
-        {/* The Pitch */}
-        <Slide title="The Pitch">
-          <p className="mb-6 text-lg">
-            A Pull Request is a pitch. You are selling your code to the maintainer. If they don't understand it, they won't merge it.
+        {/* The Perfect PR Template */}
+        <Slide title="The Perfect PR Template">
+          <p className="mb-6">
+            A blank PR description is a red flag. Use this template to make your reviewer's life easy.
           </p>
-          <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-            <h3 className="font-bold text-slate-900 mb-4">The PR Template</h3>
-            <div className="font-mono text-sm text-slate-700 bg-white p-4 rounded border border-slate-200">
-              <p className="font-bold text-blue-600">## Summary</p>
-              <p className="mb-4">Briefly describe what you changed and why.</p>
+          <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 font-mono text-sm overflow-x-auto">
+            <div className="text-slate-500 mb-2">## Summary</div>
+            <div className="text-slate-800 mb-4">
+              [Briefly explain WHAT you changed and WHY. Example: "Fixed the login button not working on mobile devices by adding a touch event listener."]
+            </div>
 
-              <p className="font-bold text-blue-600">## Changes</p>
-              <ul className="list-disc list-inside mb-4">
-                <li>Fixed bug in login form</li>
-                <li>Added validation for email field</li>
-                <li>Updated tests</li>
+            <div className="text-slate-500 mb-2">## Changes</div>
+            <div className="text-slate-800 mb-4">
+              - [x] Added `onTouchStart` handler to `LoginButton.tsx`<br/>
+              - [x] Updated unit tests to cover touch events<br/>
+              - [x] Fixed typo in `auth.ts`
+            </div>
+
+            <div className="text-slate-500 mb-2">## Related Issue</div>
+            <div className="text-slate-800 mb-4">
+              Closes #42
+            </div>
+
+            <div className="text-slate-500 mb-2">## Screenshots (Optional)</div>
+            <div className="text-slate-800">
+              [Insert image here]
+            </div>
+          </div>
+        </Slide>
+
+        {/* Self-Review Checklist */}
+        <Slide title="The Self-Review Checklist">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-6 bg-white border border-slate-200 rounded-xl">
+              <h3 className="font-bold text-slate-900 mb-4">Before you click "Create":</h3>
+              <ul className="space-y-3 text-sm text-slate-700">
+                <li className="flex items-center gap-2">
+                  <input type="checkbox" checked readOnly className="accent-green-500" /> 
+                  Did I delete console.log statements?
+                </li>
+                <li className="flex items-center gap-2">
+                  <input type="checkbox" checked readOnly className="accent-green-500" /> 
+                  Did I run the tests locally?
+                </li>
+                <li className="flex items-center gap-2">
+                  <input type="checkbox" checked readOnly className="accent-green-500" /> 
+                  Did I update the documentation?
+                </li>
+                <li className="flex items-center gap-2">
+                  <input type="checkbox" checked readOnly className="accent-green-500" /> 
+                  Is my branch up to date with main?
+                </li>
               </ul>
-
-              <p className="font-bold text-blue-600">## Related Issue</p>
-              <p>Closes #123</p>
+            </div>
+            <div className="p-6 bg-blue-50 border border-blue-100 rounded-xl flex items-center justify-center text-center">
+              <div>
+                <div className="text-4xl mb-4">👀</div>
+                <h3 className="font-bold text-blue-900 mb-2">Review Your Own Diff</h3>
+                <p className="text-sm text-blue-800">
+                  Look at the "Files Changed" tab on GitHub. If you see something you didn't mean to change (like whitespace), fix it before asking for a review.
+                </p>
+              </div>
             </div>
           </div>
         </Slide>

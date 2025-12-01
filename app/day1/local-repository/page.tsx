@@ -10,8 +10,8 @@ export default function LocalRepositoryPage() {
     <WorkshopLayout
       currentPath="/day1/local-repository"
       title="Local vs Remote Repositories"
-      nextPath="/day2"
-      nextTitle="Day 2: Git Basics"
+      nextPath="/day1/github-setup"
+      nextTitle="GitHub Setup"
     >
       <div className="max-w-4xl mx-auto">
         {/* Concept Comparison */}

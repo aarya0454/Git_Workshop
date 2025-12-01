@@ -19,57 +19,78 @@ export default function MaintainingReposPage() {
           </p>
         </div>
 
-        <div className="space-y-8">
-          <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Responsibilities of a Maintainer</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex gap-4">
-                <div className="p-2 bg-red-50 text-red-600 rounded-lg h-fit"><Heart size={24}/></div>
-                <div>
-                  <h3 className="font-bold text-slate-900">Community Health</h3>
-                  <p className="text-sm text-slate-600">Creating a welcoming environment. Enforcing Code of Conduct.</p>
-                </div>
+        {/* Triage 101 */}
+        <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm mb-8">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">Level 1: Triage</h2>
+          <p className="text-slate-600 mb-4">
+            Triage is the art of sorting the mess. Your goal is to label issues so developers know what to work on.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="flex gap-4">
+              <div className="p-2 bg-red-50 text-red-600 rounded-lg h-fit"><Heart size={24}/></div>
+              <div>
+                <h3 className="font-bold text-slate-900">The "Good First Issue"</h3>
+                <p className="text-sm text-slate-600">Label easy tasks for beginners. This grows your team.</p>
               </div>
-              <div className="flex gap-4">
-                <div className="p-2 bg-blue-50 text-blue-600 rounded-lg h-fit"><Shield size={24}/></div>
-                <div>
-                  <h3 className="font-bold text-slate-900">Code Quality</h3>
-                  <p className="text-sm text-slate-600">Reviewing PRs, ensuring tests pass, and keeping the codebase clean.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="p-2 bg-green-50 text-green-600 rounded-lg h-fit"><Users size={24}/></div>
-                <div>
-                  <h3 className="font-bold text-slate-900">Triage</h3>
-                  <p className="text-sm text-slate-600">Managing issues, labeling them, and prioritizing work.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="p-2 bg-purple-50 text-purple-600 rounded-lg h-fit"><MessageSquare size={24}/></div>
-                <div>
-                  <h3 className="font-bold text-slate-900">Communication</h3>
-                  <p className="text-sm text-slate-600">Responding to users, explaining decisions, and writing release notes.</p>
-                </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="p-2 bg-blue-50 text-blue-600 rounded-lg h-fit"><Shield size={24}/></div>
+              <div>
+                <h3 className="font-bold text-slate-900">The "Bug" vs "Feature"</h3>
+                <p className="text-sm text-slate-600">Separate broken things from new ideas.</p>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="bg-slate-900 text-white p-8 rounded-2xl">
-            <h2 className="text-2xl font-bold mb-4">Best Practices for Beginners</h2>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <span className="bg-white/20 p-1 rounded text-sm font-mono">README</span>
-                <p className="text-slate-300">Have a clear README. If people don't know what your project does, they won't use it.</p>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="bg-white/20 p-1 rounded text-sm font-mono">CONTRIBUTING.md</span>
-                <p className="text-slate-300">Tell people how to contribute. Save yourself time by setting rules early.</p>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="bg-white/20 p-1 rounded text-sm font-mono">Automate</span>
-                <p className="text-slate-300">Use GitHub Actions to run tests automatically. Don't review broken code.</p>
-              </li>
-            </ul>
+        {/* Automation */}
+        <div className="bg-slate-900 text-white p-8 rounded-2xl mb-8">
+          <h2 className="text-2xl font-bold mb-4">Level 2: Automation (CI/CD)</h2>
+          <p className="text-slate-300 mb-6">
+            Don't waste time checking formatting manually. Let robots do it.
+          </p>
+          <div className="space-y-4">
+            <div className="flex items-start gap-3">
+              <span className="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs font-mono font-bold">GitHub Actions</span>
+              <p className="text-slate-300 text-sm">
+                A script that runs every time someone pushes code.
+              </p>
+            </div>
+            <div className="bg-black/50 p-4 rounded-lg font-mono text-xs text-slate-400">
+              <p>name: CI</p>
+              <p>on: [push]</p>
+              <p>jobs:</p>
+              <p className="pl-4">build:</p>
+              <p className="pl-8">runs-on: ubuntu-latest</p>
+              <p className="pl-8">steps:</p>
+              <p className="pl-12">- uses: actions/checkout@v2</p>
+              <p className="pl-12">- run: npm test</p>
+            </div>
+            <p className="text-xs text-slate-500 italic text-center">
+              If this script fails, the PR cannot be merged. Safe!
+            </p>
+          </div>
+        </div>
+
+        {/* Community Health */}
+        <div className="bg-purple-50 p-8 rounded-2xl border border-purple-100">
+          <h2 className="text-2xl font-bold text-purple-900 mb-4">Level 3: Community Health</h2>
+          <p className="text-purple-800 mb-6">
+            A toxic community kills a project faster than bad code.
+          </p>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-white p-4 rounded-xl shadow-sm">
+              <h4 className="font-bold text-slate-900 mb-2">Code of Conduct</h4>
+              <p className="text-xs text-slate-600">Enforce it. If someone is being rude, warn them. If they continue, ban them.</p>
+            </div>
+            <div className="bg-white p-4 rounded-xl shadow-sm">
+              <h4 className="font-bold text-slate-900 mb-2">Say "No" Nicely</h4>
+              <p className="text-xs text-slate-600">You can't accept every feature. Explain why it doesn't fit the roadmap.</p>
+            </div>
+            <div className="bg-white p-4 rounded-xl shadow-sm">
+              <h4 className="font-bold text-slate-900 mb-2">Burnout is Real</h4>
+              <p className="text-xs text-slate-600">You don't owe the world your free time. Take breaks.</p>
+            </div>
           </div>
         </div>
       </div>

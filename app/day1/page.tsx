@@ -69,12 +69,28 @@ export default function Day1Page() {
             </div>
           </Link>
 
+          <Link href="/day1/first-commands" className="group card bg-white border-slate-200 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-500/10 transition-all">
+            <div className="flex items-start justify-between mb-6">
+              <div className="p-4 bg-purple-50 rounded-xl text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                <Code size={32} />
+              </div>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 4</span>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">First Commands</h3>
+            <p className="text-slate-600 mb-6">
+              Your first steps. Learn init, add, commit, and status. The core workflow of Git.
+            </p>
+            <div className="flex items-center text-purple-600 font-semibold group-hover:translate-x-2 transition-transform">
+              Start Coding <ArrowRight size={20} className="ml-2" />
+            </div>
+          </Link>
+
           <Link href="/day1/local-repository" className="group card bg-white border-slate-200 hover:border-orange-400 hover:shadow-lg hover:shadow-orange-500/10 transition-all">
             <div className="flex items-start justify-between mb-6">
               <div className="p-4 bg-orange-50 rounded-xl text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
                 <Zap size={32} />
               </div>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 4</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 5</span>
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">Local vs Remote</h3>
             <p className="text-slate-600 mb-6">
@@ -82,6 +98,22 @@ export default function Day1Page() {
             </p>
             <div className="flex items-center text-orange-600 font-semibold group-hover:translate-x-2 transition-transform">
               Connect to Cloud <ArrowRight size={20} className="ml-2" />
+            </div>
+          </Link>
+
+          <Link href="/day1/github-setup" className="group card bg-white border-slate-200 hover:border-slate-800 hover:shadow-lg hover:shadow-slate-900/10 transition-all">
+            <div className="flex items-start justify-between mb-6">
+              <div className="p-4 bg-slate-100 rounded-xl text-slate-800 group-hover:bg-slate-800 group-hover:text-white transition-colors">
+                <Globe size={32} />
+              </div>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-full">Module 6</span>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-slate-800 transition-colors">GitHub Setup</h3>
+            <p className="text-slate-600 mb-6">
+              Generate SSH keys, connect your account, and push your first code to the cloud.
+            </p>
+            <div className="flex items-center text-slate-800 font-semibold group-hover:translate-x-2 transition-transform">
+              Setup SSH <ArrowRight size={20} className="ml-2" />
             </div>
           </Link>
         </div>

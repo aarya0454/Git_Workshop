@@ -218,6 +218,71 @@ export default function VersionControlPage() {
           </div>
         </Slide>
 
+        {/* Under the Hood */}
+        <Slide title="Under the Hood: The .git Folder">
+          <div className="flex items-start gap-6">
+            <div className="flex-1">
+              <p className="mb-4">
+                Git isn't magic. It's just a folder named <code>.git</code> hidden in your project.
+              </p>
+              <div className="bg-slate-900 text-slate-300 p-6 rounded-xl font-mono text-sm shadow-lg">
+                <div className="flex items-center gap-2 mb-4 text-slate-500 border-b border-slate-700 pb-2">
+                  <span>.git structure</span>
+                </div>
+                <ul className="space-y-2">
+                  <li className="flex gap-4">
+                    <span className="text-blue-400 w-20">HEAD</span>
+                    <span>Pointer to your current branch (e.g., refs/heads/main)</span>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-blue-400 w-20">config</span>
+                    <span>Your local settings (remote URLs, user info)</span>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-blue-400 w-20">objects/</span>
+                    <span>The database! Compressed files and commits live here.</span>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-blue-400 w-20">refs/</span>
+                    <span>Bookmarks for branches and tags.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Slide>
+
+        {/* Three Tree Architecture */}
+        <Slide title="The Three Tree Architecture">
+          <p className="mb-6">
+            To understand Git, you must understand the three states of a file.
+          </p>
+          <div className="grid md:grid-cols-3 gap-4 text-center mb-8">
+            <div className="p-4 bg-red-50 border border-red-100 rounded-xl">
+              <h3 className="font-bold text-red-900 mb-2">1. Working Directory</h3>
+              <p className="text-xs text-red-700">The actual files on your hard drive that you edit.</p>
+            </div>
+            <div className="p-4 bg-yellow-50 border border-yellow-100 rounded-xl">
+              <h3 className="font-bold text-yellow-900 mb-2">2. Staging Area</h3>
+              <p className="text-xs text-yellow-700">A "holding zone" for changes you want to commit.</p>
+            </div>
+            <div className="p-4 bg-green-50 border border-green-100 rounded-xl">
+              <h3 className="font-bold text-green-900 mb-2">3. Repository</h3>
+              <p className="text-xs text-green-700">The permanent history stored in .git.</p>
+            </div>
+          </div>
+          
+          <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex justify-center">
+             <MermaidDiagram 
+                chart={`graph LR
+    WD[Working Directory] -->|git add| Index[Staging Area]
+    Index -->|git commit| Repo[Repository]
+    Repo -->|git checkout| WD
+`} 
+              />
+          </div>
+        </Slide>
+
         {/* Key Terminology */}
         <Slide title="Key Terminology">
           <div className="grid md:grid-cols-2 gap-6">

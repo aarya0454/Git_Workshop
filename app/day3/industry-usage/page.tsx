@@ -61,6 +61,57 @@ export default function IndustryUsagePage() {
             </p>
           </div>
         </div>
+
+        {/* Case Studies */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Real World Case Studies</h2>
+          
+          <div className="space-y-8">
+            {/* Netflix */}
+            <div className="flex flex-col md:flex-row gap-8 items-center bg-slate-900 text-white p-8 rounded-2xl shadow-xl">
+              <div className="flex-1">
+                <div className="text-red-600 font-bold text-2xl mb-2">NETFLIX</div>
+                <h3 className="text-xl font-bold mb-4">Streaming the World with Open Source</h3>
+                <p className="text-slate-300 mb-4">
+                  Netflix doesn't just use open source; they build it. To handle millions of concurrent streams, they built and open-sourced tools like <strong>Hystrix</strong> (for fault tolerance) and <strong>Zuul</strong> (for routing).
+                </p>
+                <div className="flex gap-2">
+                  <span className="px-3 py-1 bg-red-900/30 text-red-400 rounded-full text-xs font-bold">Cloud Infrastructure</span>
+                  <span className="px-3 py-1 bg-red-900/30 text-red-400 rounded-full text-xs font-bold">Microservices</span>
+                </div>
+              </div>
+              <div className="w-full md:w-1/3 bg-slate-800 p-4 rounded-xl border border-slate-700">
+                <div className="text-xs font-mono text-slate-400 mb-2">Netflix Open Source</div>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center gap-2">✅ <strong>Chaos Monkey:</strong> Randomly shuts down servers to test resilience.</li>
+                  <li className="flex items-center gap-2">✅ <strong>Spinnaker:</strong> Continuous delivery platform.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Airbnb */}
+            <div className="flex flex-col md:flex-row gap-8 items-center bg-white border border-slate-200 p-8 rounded-2xl shadow-lg">
+              <div className="flex-1">
+                <div className="text-rose-500 font-bold text-2xl mb-2">airbnb</div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">Design & Data at Scale</h3>
+                <p className="text-slate-600 mb-4">
+                  Airbnb revolutionized how designers and developers work together. They created <strong>Lottie</strong>, which renders After Effects animations natively on mobile and web, used by thousands of apps today.
+                </p>
+                <div className="flex gap-2">
+                  <span className="px-3 py-1 bg-rose-50 text-rose-600 rounded-full text-xs font-bold">Mobile Dev</span>
+                  <span className="px-3 py-1 bg-rose-50 text-rose-600 rounded-full text-xs font-bold">Data Engineering</span>
+                </div>
+              </div>
+              <div className="w-full md:w-1/3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div className="text-xs font-mono text-slate-500 mb-2">Airbnb Open Source</div>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-center gap-2">✨ <strong>Lottie:</strong> High-quality animations.</li>
+                  <li className="flex items-center gap-2">✨ <strong>Airflow:</strong> Workflow orchestration for data pipelines.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
       </div>
     </WorkshopLayout>
   );

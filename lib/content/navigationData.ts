@@ -15,7 +15,10 @@ export const navigationData: NavItem[] = [
       { title: "Importance of Version Control", path: "/day1/version-control" },
       { title: "MNCs & Open Source", path: "/day1/mnc-usage" },
       { title: "Installing Git", path: "/day1/installation" },
+      { title: "First Commands", path: "/day1/first-commands" },
       { title: "Local vs Remote", path: "/day1/local-repository" },
+      { title: "GitHub Setup & SSH", path: "/day1/github-setup" },
+
     ],
   },
   {
@@ -23,7 +26,7 @@ export const navigationData: NavItem[] = [
     path: "/day2",
     icon: "Code",
     children: [
-      { title: "Git Commands", path: "/day2/git-commands" },
+
       { title: "GitHub Interface", path: "/day2/github-intro" },
       { title: "Branching & Forking", path: "/day2/branching" },
       { title: "Pull Requests", path: "/day2/pull-requests" },

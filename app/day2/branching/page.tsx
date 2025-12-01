@@ -15,29 +15,70 @@ export default function BranchingPage() {
       nextTitle="Pull Requests"
     >
       <div className="max-w-4xl mx-auto">
-        {/* Concept */}
-        <Slide title="The Multiverse of Code">
-          <p className="mb-6">
-            Branching allows you to create a parallel version of your project. You can experiment, break things, and fix them without affecting the main working code.
-          </p>
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-            <h3 className="font-bold text-slate-900 mb-4 text-center">Visualizing Branches</h3>
-            <MermaidDiagram 
-              chart={`gitGraph
-     commit
-     commit
-     branch feature-login
-     checkout feature-login
-     commit
-     commit
-     checkout main
-     merge feature-login
-     commit
-  `} 
-            />
-            <p className="text-center text-sm text-slate-500 mt-4">
-              The <code>main</code> line continues safely while <code>feature-login</code> adds new code.
-            </p>
+        {/* What is a Branch? */}
+        <Slide title="What is a Branch?">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="flex-1">
+              <p className="mb-4">
+                A branch is NOT a copy of the files. It is simply a <strong>movable pointer</strong> to a commit.
+              </p>
+              <div className="bg-slate-900 text-slate-300 p-6 rounded-xl shadow-lg">
+                <h4 className="font-bold text-white mb-4 border-b border-slate-700 pb-2">The "HEAD" Pointer</h4>
+                <p className="mb-4 text-sm">
+                  Git uses a special pointer called <strong>HEAD</strong> to know "You Are Here".
+                </p>
+                <ul className="space-y-2 text-sm font-mono">
+                  <li className="flex items-center gap-2">
+                    <span className="text-blue-400">HEAD</span>
+                    <span>→</span>
+                    <span className="text-green-400">main</span>
+                    <span>→</span>
+                    <span className="text-yellow-400">Commit A</span>
+                  </li>
+                  <li className="text-slate-500 italic">// You are on 'main', looking at Commit A</li>
+                </ul>
+              </div>
+            </div>
+            <div className="w-full md:w-1/2 bg-white p-4 rounded-xl border border-slate-200">
+              <h4 className="font-bold text-slate-900 mb-2 text-center">Visualizing Pointers</h4>
+              <MermaidDiagram 
+                chart={`gitGraph
+       commit id: "A"
+       commit id: "B"
+       branch feature
+       checkout feature
+       commit id: "C"
+       checkout main
+       commit id: "D"
+       checkout feature
+       commit id: "E"
+    `} 
+              />
+            </div>
+          </div>
+        </Slide>
+
+        {/* Merge Types */}
+        <Slide title="Types of Merges">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-blue-50 border border-blue-100 rounded-xl">
+              <h3 className="font-bold text-blue-900 mb-2">1. Fast-Forward</h3>
+              <p className="text-sm text-blue-800 mb-4">
+                Git simply moves the pointer forward. No new commit is created.
+              </p>
+              <div className="text-xs bg-white p-2 rounded border border-blue-200 text-slate-500">
+                Happens when <code>main</code> hasn't changed while you were working on <code>feature</code>.
+              </div>
+            </div>
+            <div className="p-4 bg-purple-50 border border-purple-100 rounded-xl">
+              <h3 className="font-bold text-purple-900 mb-2">2. Recursive (Merge Commit)</h3>
+              <p className="text-sm text-purple-800 mb-4">
+                Git creates a new "Merge Commit" to tie the two histories together.
+              </p>
+              <div className="text-xs bg-white p-2 rounded border border-purple-200 text-slate-500">
+                Happens when <code>main</code> HAS changed (e.g., someone else pushed code).
+              </div>
+            </div>
           </div>
         </Slide>
 

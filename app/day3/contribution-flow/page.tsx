@@ -44,56 +44,84 @@ export default function ContributionFlowPage() {
         </Slide>
 
         {/* Step 1: Fork */}
-        <Slide title="1. Fork">
-          <div className="flex items-start gap-6">
-            <div className="flex-1">
-              <p className="mb-4">
-                A fork is a copy of a repository that lives on <strong>your</strong> account. You have full control over it.
-              </p>
-              <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-600">
-                Click the <span className="font-bold text-slate-900"><GitFork className="inline w-4 h-4" /> Fork</span> button in the top-right corner of the repository page.
+        <Slide title="1. Fork & Clone">
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-bold text-slate-900 mb-2">A. Fork on GitHub</h3>
+              <p className="text-sm text-slate-600 mb-2">Click the "Fork" button. This creates a copy on <strong>your</strong> account.</p>
+            </div>
+            
+            <div>
+              <h3 className="font-bold text-slate-900 mb-2">B. Clone to Local</h3>
+              <div className="code-block">
+                <code className="text-sm">
+                  <span className="text-slate-500"># Clone YOUR fork, not the original!</span><br/>
+                  <span className="text-green-400">git clone https://github.com/YOUR-USERNAME/project.git</span><br/>
+                  <span className="text-green-400">cd project</span>
+                </code>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-slate-900 mb-2">C. Add Upstream</h3>
+              <p className="text-sm text-slate-600 mb-2">Link to the original repo so you can get updates.</p>
+              <div className="code-block">
+                <code className="text-sm">
+                  <span className="text-green-400">git remote add upstream https://github.com/ORIGINAL-OWNER/project.git</span><br/>
+                  <span className="text-green-400">git remote -v</span> <span className="text-slate-500"># Should show origin AND upstream</span>
+                </code>
               </div>
             </div>
           </div>
         </Slide>
 
-        {/* Step 2: Clone */}
-        <Slide title="2. Clone">
-          <p className="mb-4">
-            Download <strong>your fork</strong> to your computer.
-          </p>
-          <div className="code-block">
-            <code className="text-sm">
-              <span className="text-green-400">git clone https://github.com/YOUR-USERNAME/project.git</span>
-            </code>
+        {/* Step 2: Branch & Code */}
+        <Slide title="2. Branch & Code">
+          <div className="space-y-6">
+            <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
+              <strong>NEVER commit to main!</strong> Always create a new branch for every feature or bug fix.
+            </div>
+
+            <div className="code-block">
+              <code className="text-sm">
+                <span className="text-slate-500"># 1. Get latest changes from original repo</span><br/>
+                <span className="text-green-400">git checkout main</span><br/>
+                <span className="text-green-400">git pull upstream main</span><br/><br/>
+                
+                <span className="text-slate-500"># 2. Create your feature branch</span><br/>
+                <span className="text-green-400">git checkout -b fix-login-bug</span><br/><br/>
+                
+                <span className="text-slate-500"># 3. Code, Add, Commit</span><br/>
+                <span className="text-green-400">git add .</span><br/>
+                <span className="text-green-400">git commit -m "Fix login button alignment"</span>
+              </code>
+            </div>
           </div>
-          <p className="mt-2 text-xs text-slate-500">
-            Make sure you clone YOUR version, not the original one!
-          </p>
         </Slide>
 
-        {/* Step 3: Sync */}
-        <Slide title="Keeping it in Sync">
-          <p className="mb-4">
-            Your fork will get outdated as the original project moves forward. You need to link them.
-          </p>
-          <div className="space-y-4">
-            <div className="bg-slate-900 p-4 rounded-xl font-mono text-sm shadow-lg">
-              <div className="text-slate-500 mb-2"># Add the original repo as "upstream"</div>
-              <div className="text-white mb-4">git remote add upstream https://github.com/ORIGINAL-OWNER/project.git</div>
-              
-              <div className="text-slate-500 mb-2"># Fetch latest changes</div>
-              <div className="text-white mb-4">git fetch upstream</div>
-              
-              <div className="text-slate-500 mb-2"># Merge into your local main</div>
-              <div className="text-white">git merge upstream/main</div>
+        {/* Step 3: Push & PR */}
+        <Slide title="3. Push & PR">
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-bold text-slate-900 mb-2">Push to YOUR Fork</h3>
+              <div className="code-block">
+                <code className="text-sm">
+                  <span className="text-green-400">git push origin fix-login-bug</span>
+                </code>
+              </div>
             </div>
-            
-            <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg flex items-center gap-3">
-              <RefreshCw className="text-blue-600" />
-              <p className="text-sm text-blue-800">
-                Always sync your main branch before starting a new feature!
+
+            <div>
+              <h3 className="font-bold text-slate-900 mb-2">Open Pull Request</h3>
+              <p className="text-sm text-slate-600 mb-4">
+                Go to the <strong>Original Repository</strong> on GitHub. You'll see a yellow banner: "fix-login-bug had recent pushes". Click <strong>Compare & pull request</strong>.
               </p>
+              <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg flex items-center gap-3">
+                <RefreshCw className="text-blue-600" />
+                <p className="text-sm text-blue-800">
+                  <strong>Pro Tip:</strong> If the maintainer asks for changes, just make them locally, commit, and push again. The PR updates automatically!
+                </p>
+              </div>
             </div>
           </div>
         </Slide>

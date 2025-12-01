@@ -31,35 +31,86 @@ export default function FindingProjectsPage() {
         </Slide>
 
         {/* Where to Look */}
-        <Slide title="Where to Look">
-          <div className="grid md:grid-cols-3 gap-4">
-            <div className="p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-400 transition-all group">
+        <Slide title="Strategy 1: The Aggregators">
+          <p className="mb-4">
+            Don't just search GitHub randomly. Use tools built to find beginner-friendly issues.
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            <a href="https://goodfirstissue.dev" target="_blank" className="p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-400 transition-all group block">
               <h3 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <Search size={16} className="text-blue-500" /> GitHub Explore
-              </h3>
-              <p className="text-sm text-slate-600 mb-4">
-                Your personalized feed on GitHub suggests repos based on your stars and languages.
-              </p>
-            </div>
-
-            <div className="p-4 bg-white border border-slate-200 rounded-xl hover:border-green-400 transition-all group">
-              <h3 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <ExternalLink size={16} className="text-green-500" /> Aggregators
-              </h3>
-              <ul className="text-sm text-slate-600 space-y-1">
-                <li>• goodfirstissue.dev</li>
-                <li>• firstcontributions.github.io</li>
-                <li>• up-for-grabs.net</li>
-              </ul>
-            </div>
-
-            <div className="p-4 bg-white border border-slate-200 rounded-xl hover:border-orange-400 transition-all group">
-              <h3 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <CheckCircle size={16} className="text-orange-500" /> Projects You Use
+                <ExternalLink size={16} className="text-blue-500" /> GoodFirstIssue.dev
               </h3>
               <p className="text-sm text-slate-600">
-                Found a bug in a library you use? That is the <strong>best</strong> place to start contributing.
+                Curates issues from popular repos. Filters by language (JavaScript, Python, Go).
               </p>
+            </a>
+
+            <a href="https://www.codetriage.com" target="_blank" className="p-4 bg-white border border-slate-200 rounded-xl hover:border-green-400 transition-all group block">
+              <h3 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                <ExternalLink size={16} className="text-green-500" /> CodeTriage
+              </h3>
+              <p className="text-sm text-slate-600">
+                Pick your favorite repos and get one open issue sent to your inbox every day.
+              </p>
+            </a>
+
+            <a href="https://up-for-grabs.net" target="_blank" className="p-4 bg-white border border-slate-200 rounded-xl hover:border-orange-400 transition-all group block">
+              <h3 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                <ExternalLink size={16} className="text-orange-500" /> Up For Grabs
+              </h3>
+              <p className="text-sm text-slate-600">
+                Specifically lists projects that have tasks specifically for new contributors.
+              </p>
+            </a>
+
+            <a href="https://github.com/explore" target="_blank" className="p-4 bg-white border border-slate-200 rounded-xl hover:border-purple-400 transition-all group block">
+              <h3 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                <Search size={16} className="text-purple-500" /> GitHub Explore
+              </h3>
+              <p className="text-sm text-slate-600">
+                The "For You" page of code. Great for finding trending projects in your stack.
+              </p>
+            </a>
+          </div>
+        </Slide>
+
+        <Slide title="Strategy 2: Scratch Your Own Itch">
+          <div className="flex items-start gap-6">
+            <div className="flex-1">
+              <p className="mb-4 text-lg font-medium text-slate-800">
+                The best project to contribute to is one you already use.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold mt-1">1</div>
+                  <p className="text-slate-600"><strong>Notice a bug?</strong> Don't just complain. Fix it.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold mt-1">2</div>
+                  <p className="text-slate-600"><strong>Docs confusing?</strong> Rewrite them to be clearer.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold mt-1">3</div>
+                  <p className="text-slate-600"><strong>Missing a feature?</strong> Build it (but ask first!).</p>
+                </div>
+              </div>
+              <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
+                <strong>Pro Tip:</strong> You already know the context because you are a user. This skips 50% of the learning curve.
+              </div>
+            </div>
+            <div className="hidden md:block w-1/3">
+              <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-lg rotate-3">
+                <div className="flex items-center gap-2 mb-2 text-slate-400 text-xs uppercase font-bold">
+                  <Tag size={12} /> npm install
+                </div>
+                <div className="font-mono text-sm text-slate-600">
+                  Error: Cannot find module 'react'<br/>
+                  at Function.Module._resolveFilename...
+                </div>
+                <div className="mt-4 pt-4 border-t border-slate-100 text-center text-blue-600 font-bold text-sm">
+                  Fixing this &gt; Random Issue
+                </div>
+              </div>
             </div>
           </div>
         </Slide>

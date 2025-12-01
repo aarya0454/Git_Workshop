@@ -148,13 +148,25 @@ export default function FirstCommandsPage() {
                 </div>
               </div>
             </div>
-            <div className="hidden md:block w-1/3 bg-slate-50 p-4 rounded-xl border border-slate-200">
-              <h4 className="font-bold text-slate-700 mb-2 flex items-center gap-2">
-                <GitCommit size={16} /> Best Practice
-              </h4>
-              <p className="text-sm text-slate-600">
-                Commit often! Small, focused commits are easier to understand and fix than massive ones.
-              </p>
+            <div className="hidden md:block w-1/3 space-y-4">
+              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h4 className="font-bold text-slate-700 mb-2 flex items-center gap-2">
+                  <GitCommit size={16} /> Best Practice
+                </h4>
+                <p className="text-sm text-slate-600">
+                  Commit often! Small, focused commits are easier to understand and fix than massive ones. This is called <strong>Atomic Commits</strong>.
+                </p>
+              </div>
+              
+              <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
+                <h4 className="font-bold text-purple-900 mb-2 text-xs uppercase">Pro Shortcut</h4>
+                <p className="text-sm text-purple-800 mb-2">
+                  Skip the staging step for files Git already knows about:
+                </p>
+                <code className="text-xs bg-white px-2 py-1 rounded border border-purple-200 text-purple-700 block text-center">
+                  git commit -am "Message"
+                </code>
+              </div>
             </div>
           </div>
         </Slide>

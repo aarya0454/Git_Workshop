@@ -107,6 +107,18 @@ export default function InstallationPage() {
                 </p>
               </div>
             </div>
+
+            <div className="p-4 bg-blue-50 border border-blue-100 rounded-xl">
+              <h4 className="font-bold text-blue-900 mb-2">Pro Tip: Set your Editor</h4>
+              <p className="text-sm text-blue-800 mb-2">
+                Git opens a text editor when you commit. The default is often Vim (which is hard to exit!). Set it to VS Code instead:
+              </p>
+              <div className="code-block bg-white">
+                <code className="text-xs text-slate-700">
+                  git config --global core.editor "code --wait"
+                </code>
+              </div>
+            </div>
           </div>
         </Slide>
 
