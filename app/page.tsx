@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next"
 import { ArrowRight, Terminal, Code, Rocket, Trophy, MapPin, Calendar, Users, BookOpen } from "lucide-react";
 
 export default function HomePage() {

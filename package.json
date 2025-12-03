@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,6 +12,7 @@
   },
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
+    "@vercel/analytics": "^1.6.1",
     "@xterm/addon-fit": "^0.10.0",
     "@xterm/xterm": "^5.5.0",
     "clsx": "^2.1.1",
